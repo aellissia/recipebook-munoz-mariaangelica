@@ -25,5 +25,8 @@ class RecipeIngredient(models.Model):
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE, related_name="recipe")
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="ingredients")
 
+    class Meta:
+        unique_together = ('recipe', 'ingredient')
+
     def __str__(self):
         return f"{self.recipe.name} - {self.quantity} {self.ingredient.name}"
