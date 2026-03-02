@@ -2,10 +2,13 @@
 
 {% block content %}
 <h2>{{ recipe.name }}</h2>
+<h3>Author: {{ recipe.author.name }}</h3>
 <h3>Ingredients:</h3>
 <ul>
     {% for item in recipe.ingredients.all %}
         <li>{{ item.ingredient.name }} - {{ item.quantity }}</li>
     {% endfor %}
 </ul>
+<p>Created on: {{ recipe.created_on|date:"Y-m-d" }}</p>
+<p>Updated on: {{ recipe.updated_on|date:"Y-m-d" }}</p>
 {% endblock %}
