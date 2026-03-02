@@ -31,13 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'ledger',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ledger',
 ]
 
 MIDDLEWARE = [
@@ -105,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Manila'
 
 USE_I18N = True
 
@@ -118,6 +118,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 LOGIN_REDIRECT_URL = '/recipes/list'
-LOGOUT_REDIRECT_URL ='accounts/login'
+LOGOUT_REDIRECT_URL = '/accounts/login'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

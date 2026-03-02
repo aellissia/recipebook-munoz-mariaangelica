@@ -9,6 +9,6 @@
         <li>{{ item.ingredient.name }} - {{ item.quantity }}</li>
     {% endfor %}
 </ul>
-<p>Created on: {{ recipe.created_on|date:"Y-m-d" }}</p>
-<p>Updated on: {{ recipe.updated_on|date:"Y-m-d" }}</p>
+<p>Created on: {{ recipe.created_on|date:"Y-m-d H:i" }}</p>
+<p>Updated on: {{ recipe.updated_on|date:"Y-m-d H:i" }}</p>
 {% endblock %}

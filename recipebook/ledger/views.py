@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Recipe, Ingredient, RecipeIngredient
-#from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def recipes_list(request):
@@ -9,7 +9,7 @@ def recipes_list(request):
     }
     return render(request, "recipes_list.html", ctx)
 
-#@login_required
+@login_required
 def recipe_detail(request, pk):
     recipe = Recipe.objects.get(id=pk)
     ctx = {
