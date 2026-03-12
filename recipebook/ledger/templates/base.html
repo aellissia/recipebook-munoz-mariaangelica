@@ -7,7 +7,9 @@
         <header>
             <h1>Recipe Book</h1>
             {% if user.is_authenticated %}
+            {% with form=None %}
                 {% include 'registration/logout.html' %}
+            {% endwith %}
             {% else %}
                 <a href="{% url 'login' %}">Login</a>
             {% endif %}

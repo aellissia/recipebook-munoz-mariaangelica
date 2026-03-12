@@ -24,11 +24,13 @@ def recipe_detail(request, pk):
 class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = Recipe 
     form_class = RecipeForm
+    template_name = 'recipe_form.html'
     success_url = reverse_lazy('ledger:recipes_list')
 
 class RecipeImageCreateView(LoginRequiredMixin, CreateView):
     model = RecipeImage
     form_class = RecipeImageForm
+    template_name = 'recipeimage_form.html'
 
     def form_valid(self, form):
         form.instance.recipe = Recipe.objects.get(pk=self.kwargs['pk'])

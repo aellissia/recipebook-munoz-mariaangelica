@@ -7,5 +7,5 @@
     {{ form.as_p }}
     <input type="submit" value="Upload">
 </form>
-<a href="{% url 'ledger:recipe_detail' recipe_pk %}">Back to Recipe</a>
+<a href="{% url 'ledger:recipe_detail' pk=recipe_pk %}">Back to Recipe</a>
 {% endblock %}
