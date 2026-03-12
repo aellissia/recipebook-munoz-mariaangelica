@@ -3,6 +3,15 @@
 {% block content %}
 <h2>{{ recipe.name }}</h2>
 <h3>Author: {{ recipe.author.name }}</h3>
+
+{% for img in recipe.images.all %}
+    <img src="{{ img.image.url }}" alt="{{ img.description }}">
+{% endfor %}
+
+{% if user.is_authenticated %}
+    <a href="{% url 'ledger:recipe_add_image' recipe.pk %}">Upload Recipe Image</a>
+{% endif %}
+
 <h3>Ingredients:</h3>
 <ul>
     {% for item in recipe.ingredients.all %}
